@@ -1,10 +1,14 @@
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#092116">
-  <meta name="description" content="The 15th Conference on Taxonomy and Systematics in Thailand (TST15), 12–14 May 2027, Chulalongkorn University, Bangkok, Thailand.">
+
+  <meta name="description"
+    content="The 15th Conference on Taxonomy and Systematics in Thailand (TST15), 12–14 May 2027, Chulalongkorn University, Bangkok, Thailand.">
+
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tst15-cu.com/">
   <meta property="og:title" content="TST15 – The 15th Conference on Taxonomy and Systematics in Thailand">
@@ -15,231 +19,462 @@
   <meta name="twitter:title" content="TST15 – The 15th Conference on Taxonomy and Systematics in Thailand">
   <meta name="twitter:description" content="From Morphology to Molecules and Museomics.">
   <meta name="twitter:image" content="https://tst15-cu.com/assets/og-image.jpg">
-  
+
   <title>TST15 — The Future of Taxonomy</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
+
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 </head>
+
 <body>
+
+  <!-- HEADER -->
   <header class="site-header">
-    <a class="brand-row" href="#home" aria-label="TST15 home">    
+
+    <a class="brand-row" href="#home" aria-label="TST15 home">
       <img class="logo logo-chula" src="assets/chula_logo.png" alt="Chulalongkorn University">
       <span class="logo-divider"></span>
       <img class="logo logo-gsos" src="assets/faculty-science.png" alt="Kyoto University Graduate School of Global Environmental Studies">
       <span class="logo-divider"></span>
       <img class="logo logo-faculty" src="assets/cu_sc.png" alt="Faculty of Science, Chulalongkorn University">
     </a>
-    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span></button>
+
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
+
     <nav class="nav" aria-label="Main navigation">
-      <a class="active" href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#theme">Theme</a>
-      <a href="#updates">Updates</a>
-      <a href="#contact">Contact</a>
+
+      <a class="active" href="#home" data-en="Home" data-th="หน้าหลัก">Home</a>
+
+      <a href="#about" data-en="About" data-th="เกี่ยวกับงาน">About</a>
+
+      <a href="#theme" data-en="Theme" data-th="หัวข้อการประชุม">Theme</a>
+
+      <a href="#updates" data-en="Updates" data-th="ข่าวสาร">Updates</a>
+
+      <a href="#contact" data-en="Contact" data-th="ติดต่อ">Contact</a>
+
+      <!-- LANGUAGE SWITCHER -->
+      <div class="language-switcher" aria-label="Select language">
+        <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+        <span class="lang-divider">|</span>
+        <button type="button" class="lang-btn" data-lang="th" aria-pressed="false">TH</button>
+      </div>
+
     </nav>
   </header>
 
 
   <main>
+
+    <!-- HERO SECTION -->
     <section class="hero" id="home">
+
       <div class="hero-photo" role="img" aria-label="Natural history museum specimen cabinets"></div>
       <div class="hero-shade"></div>
+
       <div class="hero-content">
+
         <div class="event-lockup">
-          <div class="tst-wordmark">TST<span class="hero-number">15</span><span class="hero-dash">-</span>CU</div>
-          <p class="eyebrow event-label">The 15<sup>th</sup> Conference on Taxonomy and Systematics in Thailand</p>
+
+          <div class="tst-wordmark">
+            TST<span class="hero-number">15</span><span class="hero-dash">-</span>CU
+          </div>
+
+          <p class="eyebrow event-label">
+            <span data-en="The 15" data-th="งานประชุมวิชาการอนุกรมวิธานและซิสเทมาติคส์ในประเทศไทย ครั้งที่ 15">The 15</span><sup>th</sup>
+            <span data-en="Conference on Taxonomy and Systematics in Thailand"
+                  data-th="งานประชุมวิชาการอนุกรมวิธานและซิสเทมาติคส์ในประเทศไทย">Conference on Taxonomy and Systematics in Thailand</span>
+          </p>
+
         </div>
+
         <span class="pink-rule"></span>
-        <h1>The future<br>of <em>taxonomy</em></h1>
-        <p class="hero-subtitle">From Morphology to<br>Molecules and Museomics</p>
+
+        <h1>
+          <span data-en="Next-Generation" data-th="อนุกรมวิธาน">Next-Generation</span><br>
+          <span data-en="of" data-th=" "></span><em data-en="taxonomy" data-th="ยุคใหม่">taxonomy</em>
+        </h1>
+
+        <p class="hero-subtitle"
+           data-en="From Morphology to<br>Molecules and Museomics"
+           data-th="จากสัณฐานวิทยาสู่<br>โมเลกุลและมิวเซียมิกส์">
+          From Morphology to<br>Molecules and Museomics
+        </p>
 
         <div class="event-meta">
 
-         <!-- Conference dates -->
-         <div class="meta-item">
-          <i data-lucide="calendar-days"
-          class="meta-icon"
-           aria-hidden="true"></i>
-         <span>12 – 14 MAY 2027</span>
-         </div>
-         <!-- Conference venue -->
-         <div class="meta-item location">
-          <i data-lucide="map-pin"
-           class="meta-icon"
-            aria-hidden="true"></i>
-          <span>
-           Faculty of Science,<br>
-           CHULALONGKORN UNIVERSITY<br>
-          <small>BANGKOK · THAILAND</small>
-          </span>
-         </div>
+          <div class="meta-item">
+            <i data-lucide="calendar-days" class="meta-icon" aria-hidden="true"></i>
+            <span data-en="12 – 14 MAY 2027" data-th="12 – 14 พฤษภาคม 2570">12 – 14 MAY 2027</span>
+          </div>
+
+          <div class="meta-item location">
+            <i data-lucide="map-pin" class="meta-icon" aria-hidden="true"></i>
+            <span>
+              <span data-en="FACULTY OF SCIENCE," data-th="คณะวิทยาศาสตร์"></span><br>
+              <span data-en="CHULALONGKORN UNIVERSITY" data-th="จุฬาลงกรณ์มหาวิทยาลัย"></span><br>
+              <small data-en="BANGKOK · THAILAND" data-th="กรุงเทพมหานคร · ประเทศไทย">BANGKOK · THAILAND</small>
+            </span>
+          </div>
 
         </div>
 
-          
-        <a class="pill-button" href="#about">About theme <span aria-hidden="true">→</span></a>
+        <a class="pill-button" href="#theme">
+          <span data-en="About theme" data-th="ธีมงานประชุม">Conference Theme</span>
+          <span aria-hidden="true">→</span>
+        </a>
+
       </div>
-      <a class="scroll-cue" href="#overview" aria-label="Scroll to overview"><span></span><small>Scroll down</small></a>
+
+      <a class="scroll-cue" href="#about" aria-label="Scroll to overview">
+        <span></span>
+        <small data-en="Scroll down" data-th="เลื่อนลง">Scroll down</small>
+      </a>
+
     </section>
 
 
     <!-- INTRO SECTION -->
-<section class="tst-intro" id="about">
-  <div class="tst-intro-main">
+    <section class="tst-intro" id="about">
 
-    <div class="tst-intro-copy">
-      <span class="tst-eyebrow">SAVE THE DATE · 2027</span>
+      <div class="tst-intro-main">
+
+        <div class="tst-intro-copy">
+
+          <span class="tst-eyebrow"
+                data-en="SAVE THE DATE · 2027"
+                data-th="ขอเชิญร่วมงานปี 2570">
+            SAVE THE DATE · 2027
+          </span>
+
+          <h2>
+            <span data-en="The future" data-th="อนาคตแห่ง"></span><br>
+            <em data-en="taxonomy." data-th="อนุกรมวิธาน">taxonomy.</em>
+          </h2>
+
+          <p
+            data-en="The 15th Conference on Taxonomy and Systematics in Thailand brings the taxonomy community together in Bangkok to explore the next generation of biodiversity science."
+            data-th="งานประชุมวิชาการอนุกรมวิธานและซิสเทมาติคส์ในประเทศไทย ครั้งที่ 15 เป็นเวทีที่รวบรวมนักอนุกรมวิธานและนักวิทยาศาสตร์จากหลากหลายสาขา เพื่อร่วมแลกเปลี่ยนความรู้และสำรวจทิศทางใหม่ของวิทยาศาสตร์ความหลากหลายทางชีวภาพ ณ กรุงเทพมหานคร">
+            The 15th Conference on Taxonomy and Systematics in Thailand brings the taxonomy community together in Bangkok to explore the next generation of biodiversity science.
+          </p>
+
+        </div>
+
+
+        <div class="tst-intro-info">
+
+          <div class="tst-info-card">
+            <h3 data-en="12—14 May" data-th="12—14 พฤษภาคม">12—14 May</h3>
+            <span data-en="2027 · CONFERENCE DATES" data-th="2570 · วันจัดการประชุม">2027 · CONFERENCE DATES</span>
+          </div>
+
+          <div class="tst-info-card">
+            <h3 data-en="CHULALONGKORN" data-th="จุฬาลงกรณ์">CHULALONGKORN</h3>
+            <span data-en="UNIVERSITY · BANGKOK, THAILAND"
+                  data-th="มหาวิทยาลัย · กรุงเทพมหานคร ประเทศไทย">
+              UNIVERSITY · BANGKOK, THAILAND
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- CONFERENCE THEME -->
+    <section class="tst-theme" id="theme">
+
+      <span class="tst-eyebrow"
+            data-en="CONFERENCE THEME"
+            data-th="หัวข้อหลักของการประชุม">
+        CONFERENCE THEME
+      </span>
 
       <h2>
-        The future<br>
-        of <em>taxonomy.</em>
+        <span data-en="Next-Generation Taxonomy:"
+              data-th="อนุกรมวิธานยุคใหม่:">Next-Generation Taxonomy:</span><br>
+
+        <span data-en="From Morphology to"
+              data-th="จากสัณฐานวิทยาสู่">From Morphology to</span>
+
+        <em>
+          <span data-en="Molecules"
+                data-th="โมเลกุล">Molecules</span><br>
+
+          <span data-en="and Museomics"
+                data-th="และมิวเซียมิกส์">and Museomics</span>
+        </em>
       </h2>
 
-      <p>
-        The 15th Conference on Taxonomy and Systematics
-        in Thailand brings the taxonomy community together
-        in Bangkok to explore the next generation of
-        biodiversity science.
+      <p data-en="THE 15TH CONFERENCE ON TAXONOMY AND SYSTEMATICS IN THAILAND"
+         data-th="งานประชุมวิชาการอนุกรมวิธานและซิสเทมาติคส์ในประเทศไทย ครั้งที่ 15">
+        THE 15<sup>th</sup> CONFERENCE ON TAXONOMY AND SYSTEMATICS IN THAILAND
       </p>
-    </div>
 
-    <div class="tst-intro-info">
-
-      <div class="tst-info-card">
-        <h3>12—14 May</h3>
-        <span>2027 · CONFERENCE DATES</span>
-      </div>
-
-      <div class="tst-info-card">
-        <h3>Chulalongkorn</h3>
-        <span>UNIVERSITY · BANGKOK, THAILAND</span>
-      </div>
-
-    </div>
-
-  </div>
-</section>
+    </section>
 
 
 
-<!-- CONFERENCE THEME -->
-<section class="tst-theme" id="theme">
+    <!-- UPDATES SECTION -->
+    <section class="tst-updates" id="updates">
 
-  <span class="tst-eyebrow">CONFERENCE THEME</span>
+      <div class="tst-updates-header">
 
-  <h2>
-    Next-Generation Taxonomy:<br>
-    From Morphology to <em>Molecules<br>
-    and Museomics</em>
-  </h2>
+        <div>
 
-  <p>
-    THE 15TH CONFERENCE ON TAXONOMY AND
-    SYSTEMATICS IN THAILAND
-  </p>
+          <span class="tst-eyebrow"
+                data-en="STAY CONNECTED"
+                data-th="ติดตามข่าวสาร">
+            STAY CONNECTED
+          </span>
 
-</section>
+          <h2 data-en="News &amp; Updates"
+              data-th="ข่าวสารและประกาศ">
+            News &amp; Updates
+          </h2>
 
+        </div>
 
-
-<!-- UPDATES SECTION -->
-<section class="tst-updates" id="updates">
-
-  <div class="tst-updates-header">
-
-    <div>
-      <span class="tst-eyebrow">STAY CONNECTED</span>
-      <h2>News &amp; Updates</h2>
-    </div>
-
-    <p>
-      Follow the latest announcements and important
-      information about TST15.
-    </p>
-
-  </div>
-
-
-  <div class="tst-updates-grid">
-
-    <article class="tst-update-item">
-
-      <span class="tst-update-number">01</span>
-
-      <div>
-        <span class="tst-update-label">COMING SOON</span>
-        <h3>Conference Announcements</h3>
-        <p>
-          Information about the conference
-          will be announced soon.
+        <p data-en="Follow the latest announcements and important information about TST15."
+           data-th="ติดตามประกาศและข้อมูลสำคัญเกี่ยวกับการประชุม TST15 ได้ที่นี่">
+          Follow the latest announcements and important information about TST15.
         </p>
+
       </div>
 
-    </article>
+
+      <div class="tst-updates-grid">
+
+        <article class="tst-update-item">
+
+          <span class="tst-update-number">01</span>
+
+          <div>
+
+            <span class="tst-update-label"
+                  data-en="COMING SOON"
+                  data-th="เร็ว ๆ นี้">
+              COMING SOON
+            </span>
+
+            <h3 data-en="Conference Announcements"
+                data-th="ประกาศเกี่ยวกับการประชุม">
+              Conference Announcements
+            </h3>
+
+            <p data-en="Information about the conference will be announced soon."
+               data-th="รายละเอียดและประกาศต่าง ๆ เกี่ยวกับการประชุมจะเผยแพร่ในเร็ว ๆ นี้">
+              Information about the conference will be announced soon.
+            </p>
+
+          </div>
+
+        </article>
 
 
-    <article class="tst-update-item">
+        <article class="tst-update-item">
 
-      <span class="tst-update-number">02</span>
+          <span class="tst-update-number">02</span>
 
-      <div>
-        <span class="tst-update-label">COMING SOON</span>
-        <h3>Important Dates</h3>
-        <p>
-          Further details and important dates
-          will be published here.
-        </p>
+          <div>
+
+            <span class="tst-update-label"
+                  data-en="COMING SOON"
+                  data-th="เร็ว ๆ นี้">
+              COMING SOON
+            </span>
+
+            <h3 data-en="Important Dates"
+                data-th="กำหนดการสำคัญ">
+              Important Dates
+            </h3>
+
+            <p data-en="Further details and important dates will be published here."
+               data-th="รายละเอียดเพิ่มเติมและกำหนดการสำคัญจะประกาศให้ทราบที่นี่">
+              Further details and important dates will be published here.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="tst-update-item">
+
+          <span class="tst-update-number">03</span>
+
+          <div>
+
+            <span class="tst-update-label"
+                  data-en="COMING SOON"
+                  data-th="เร็ว ๆ นี้">
+              COMING SOON
+            </span>
+
+            <h3 data-en="Join Us in Bangkok"
+                data-th="พบกันที่กรุงเทพฯ">
+              Join Us in Bangkok
+            </h3>
+
+            <p data-en="We look forward to welcoming the taxonomy community to Thailand."
+               data-th="เราหวังเป็นอย่างยิ่งว่าจะได้ต้อนรับนักอนุกรมวิธานและนักวิทยาศาสตร์จากทั่วทุกภูมิภาคสู่ประเทศไทย">
+              We look forward to welcoming the taxonomy community to Thailand.
+            </p>
+
+          </div>
+
+        </article>
+
       </div>
 
-    </article>
+    </section>
+
+  </main>
 
 
-    <article class="tst-update-item">
 
-      <span class="tst-update-number">03</span>
-
-      <div>
-        <span class="tst-update-label">COMING SOON</span>
-        <h3>Join Us in Bangkok</h3>
-        <p>
-          We look forward to welcoming the
-          taxonomy community to Thailand.
-        </p>
-      </div>
-
-    </article>
-
-  </div>
-
-</section>
-    
-
+  <!-- FOOTER -->
   <footer class="site-footer" id="contact">
+
     <div class="footer-top">
+
       <div class="footer-logos">
+
         <img class="logo logo-chula" src="assets/chula.jpg" alt="Chulalongkorn University">
+
         <span class="logo-divider"></span>
+
         <img class="logo logo-faculty" src="assets/faculty-science.jpg" alt="Faculty of Science, Chulalongkorn University">
+
         <span class="logo-divider"></span>
+
         <img class="logo logo-gsos" src="assets/gsos.jpg" alt="Kyoto University GSOS">
+
       </div>
-      <div class="social-links"><span>Follow us</span>
+
+      <div class="social-links">
+
+        <span data-en="Follow us" data-th="ติดตามเรา">Follow us</span>
+
         <a href="#contact" aria-label="Facebook">f</a>
-        <a href="#contact" aria-label="Email">✉</a></div>
+
+        <a href="#contact" aria-label="Email">✉</a>
+
+      </div>
+
     </div>
-    <div class="footer-bottom"><span>© 2027 TST15-CU. All rights reserved</span>
+
+    <div class="footer-bottom">
+
+      <span data-en="© 2027 TST15-CU. All rights reserved."
+            data-th="© 2570 TST15-CU สงวนลิขสิทธิ์">
+        © 2027 TST15-CU. All rights reserved.
+      </span>
+
     </div>
+
   </footer>
+
+
+
+  <!-- ICONS -->
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
-<script>
-  lucide.createIcons();
-</script>
+
+  <script>
+    lucide.createIcons();
+  </script>
+
+
+  <!-- LANGUAGE SWITCHER -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const languageButtons = document.querySelectorAll(".lang-btn");
+
+      const translatableElements = document.querySelectorAll(
+        "[data-en][data-th]"
+      );
+
+      const description = document.querySelector('meta[name="description"]');
+      const ogDescription = document.querySelector('meta[property="og:description"]');
+      const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+
+      const descriptions = {
+        en: "The 15th Conference on Taxonomy and Systematics in Thailand (TST15), 12–14 May 2027, Chulalongkorn University, Bangkok, Thailand.",
+        th: "การประชุมอนุกรมวิธานและอนุกรมวิธานเชิงระบบแห่งประเทศไทย ครั้งที่ 15 วันที่ 12–14 พฤษภาคม 2570 ณ จุฬาลงกรณ์มหาวิทยาลัย กรุงเทพมหานคร"
+      };
+
+      function setLanguage(language) {
+
+        document.documentElement.lang = language;
+
+        translatableElements.forEach(function (element) {
+
+          const translatedText = element.getAttribute("data-" + language);
+
+          if (translatedText !== null) {
+            element.innerHTML = translatedText;
+          }
+
+        });
+
+        languageButtons.forEach(function (button) {
+
+          const isActive = button.dataset.lang === language;
+
+          button.classList.toggle("active", isActive);
+          button.setAttribute("aria-pressed", isActive);
+
+        });
+
+        if (description) {
+          description.setAttribute("content", descriptions[language]);
+        }
+
+        if (ogDescription) {
+          ogDescription.setAttribute("content", descriptions[language]);
+        }
+
+        if (twitterDescription) {
+          twitterDescription.setAttribute("content", descriptions[language]);
+        }
+
+        localStorage.setItem("tst15-language", language);
+
+      }
+
+      languageButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+          setLanguage(button.dataset.lang);
+        });
+
+      });
+
+      const savedLanguage = localStorage.getItem("tst15-language") || "en";
+
+      setLanguage(savedLanguage);
+
+    });
+  </script>
+
+
+  <!-- EXISTING WEBSITE SCRIPT -->
   <script src="script.js"></script>
+
 </body>
 </html>
