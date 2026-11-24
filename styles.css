@@ -1165,8 +1165,12 @@ a {
 
 .tst-wordmark .hero-number {
   color: #DF5C91 !important;
+  -webkit-text-fill-color: #DF5C91 !important;
+  background: none !important;
 }
 
 .tst-wordmark .hero-dash {
   color: #F3F0E5 !important;
+  -webkit-text-fill-color: #F3F0E5 !important;
+  background: none !important;
 }
