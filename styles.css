@@ -170,7 +170,7 @@ a {
   gap: clamp(18px, 2.7vw, 40px);
 
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -1146,4 +1146,27 @@ a {
 
   color: var(--pink);
   stroke-width: 1.7;
+}
+
+.hero-number {
+  display: inline-block;
+  position: relative;
+  top: -0.16em;
+  color: #DF5C91;
+}
+
+.hero-dash {
+  display: inline-block;
+  font-size: 0.65em;
+  margin: 0 0.02em;
+  vertical-align: 0.12em;
+  color: #F3F0E5;
+}
+
+.tst-wordmark .hero-number {
+  color: #DF5C91 !important;
+}
+
+.tst-wordmark .hero-dash {
+  color: #F3F0E5 !important;
 }
