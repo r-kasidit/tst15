@@ -1174,3 +1174,54 @@ a {
   -webkit-text-fill-color: #F3F0E5 !important;
   background: none !important;
 }
+
+
+/* ========================================
+   LANGUAGE SWITCHER
+======================================== */
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 18px;
+  white-space: nowrap;
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 6px 2px;
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity 0.25s ease, color 0.25s ease;
+}
+
+.lang-btn:hover {
+  opacity: 1;
+}
+
+.lang-btn.active {
+  color: #DF5C91;
+  opacity: 1;
+}
+
+.lang-divider {
+  opacity: 0.35;
+  font-size: 12px;
+}
+
+/* Mobile navigation */
+
+@media (max-width: 768px) {
+  .language-switcher {
+    margin-left: 0;
+    margin-top: 12px;
+    justify-content: center;
+  }
+}
