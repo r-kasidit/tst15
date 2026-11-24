@@ -1,0 +1,1149 @@
+/* =========================================================
+   TST15 — CONFERENCE WEBSITE
+   Main stylesheet
+
+   QUICK EDITS:
+   1. Colors and fonts       → :root
+   2. Header and navigation  → HEADER
+   3. Hero image and text    → HERO
+   4. Intro section          → INTRO
+   5. Conference theme       → THEME
+   6. Updates                 → UPDATES
+   7. Footer                  → FOOTER
+   8. Mobile layouts          → RESPONSIVE
+   ========================================================= */
+
+
+/* =========================================================
+   1. DESIGN TOKENS
+   Change the values here to update the whole website.
+   ========================================================= */
+
+:root {
+  /* Main colors */
+  --forest: #061e14;
+  --forest-deep: #04170f;
+  --forest-section: #0a2a1b;
+  --green: #153b26;
+  --sage: #e4ebdd;
+  --ivory: #f3f0e5;
+
+  /* Accent colors */
+  --pink: #df5c91;
+  --pink-dark: #d65389;
+
+  /* Text colors */
+  --text-light: #f3f0e5;
+  --text-dark: #14291d;
+  --text-muted-light: #c6cfc5;
+  --text-muted-dark: #536457;
+
+  /* Fonts loaded in index.html */
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "DM Sans", Arial, sans-serif;
+
+  /* Layout */
+  --page-gutter: 5.4%;
+  --header-gutter: 4.7%;
+  --content-width: 1250px;
+
+  /* Borders and transitions */
+  --border-light: rgba(255, 255, 255, 0.18);
+  --border-dark: rgba(20, 41, 29, 0.20);
+  --transition: 0.25s ease;
+}
+
+
+/* =========================================================
+   2. GLOBAL STYLES
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  background: var(--forest);
+  color: var(--text-light);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: var(--pink);
+  color: white;
+}
+
+
+/* =========================================================
+   3. HEADER
+   ========================================================= */
+
+.site-header {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+
+  padding: 20px var(--header-gutter);
+
+  border-bottom: 1px solid rgba(244, 240, 229, 0.3);
+  background: linear-gradient(
+    180deg,
+    rgba(3, 20, 12, 0.55),
+    transparent
+  );
+}
+
+/* Partner logos */
+
+.brand-row,
+.footer-logos {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  min-width: 0;
+}
+
+.logo {
+  object-fit: contain;
+  mix-blend-mode: screen;
+}
+
+.logo-faculty {
+  width: 165px;
+  height: 56px;
+}
+
+.logo-chula {
+  width: 120px;
+  height: 52px;
+}
+
+.logo-gsos {
+  width: 160px;
+  height: 52px;
+}
+
+.logo-divider {
+  flex: none;
+  width: 1px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+/* Main navigation */
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 2.7vw, 40px);
+
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.nav a {
+  position: relative;
+  padding: 8px 0;
+  color: var(--text-light);
+}
+
+.nav a::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 0;
+  height: 2px;
+
+  background: var(--pink);
+  content: "";
+  transition: width var(--transition);
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+  width: 100%;
+}
+
+/* Mobile menu button — hidden on desktop */
+
+.menu-toggle {
+  display: none;
+  border: 0;
+  background: none;
+  color: white;
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   4. HERO
+   Edit the image in .hero-photo.
+   ========================================================= */
+
+.hero {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  height: min(100vh, 850px);
+  min-height: 680px;
+  overflow: hidden;
+}
+
+/* Background photograph */
+
+.hero-photo {
+  position: absolute;
+  inset: 0;
+
+  background-image: url("assets/museum-hero.png");
+  background-position: center center;
+  background-size: cover;
+
+  transform: scale(1.02);
+}
+
+/* Dark gradient over the photograph */
+
+.hero-shade {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 25, 13, 0.99) 0%,
+      rgba(4, 30, 16, 0.92) 23%,
+      rgba(5, 30, 16, 0.70) 40%,
+      rgba(4, 25, 14, 0.12) 72%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(3, 18, 11, 0.38),
+      transparent 28%
+    );
+}
+
+/* Main hero content */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(540px, 49vw);
+  margin-left: 5.1%;
+  padding-top: 95px;
+}
+
+/* TST15 wordmark */
+
+.tst-wordmark {
+  font-family: var(--font-display);
+  font-size: clamp(70px, 8.7vw, 128px);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 0.92;
+}
+
+.tst-wordmark span {
+  color: var(--pink);
+}
+
+/* Conference name below the wordmark */
+
+.event-label {
+  max-width: 650px;
+  margin: 14px 0 0;
+
+  color: #f5f1e8;
+  font-family: var(--font-body);
+  font-size: clamp(15px, 1.25vw, 18px);
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  line-height: 1.5;
+}
+
+.event-label sup {
+  font-size: 0.7em;
+}
+
+/* Pink divider */
+
+.pink-rule {
+  display: block;
+  width: 38px;
+  height: 3px;
+  margin: 24px 0;
+
+  background: var(--pink);
+}
+
+/* Main headline */
+
+.hero h1 {
+  margin: 0 0 22px;
+
+  font-family: var(--font-display);
+  font-size: clamp(44px, 5.3vw, 76px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.hero h1 em {
+  color: var(--pink);
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Subtitle */
+
+.hero-subtitle {
+  margin: 0 0 32px;
+  padding-left: 15px;
+
+  border-left: 4px solid var(--pink);
+
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2vw, 26px);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.24;
+}
+
+/* Date and venue */
+
+.event-meta {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 0 0 32px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.07em;
+}
+
+.meta-icon {
+  color: var(--pink);
+  font-size: 24px;
+  line-height: 1;
+}
+
+.location {
+  padding-left: 22px;
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.location small {
+  color: #d5d6ce;
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 0.11em;
+}
+
+/* Main action button */
+
+.pill-button,
+.outline-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+
+  padding: 13px 23px;
+  border: 1px solid var(--pink);
+  border-radius: 40px;
+
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  transition: all var(--transition);
+}
+
+.pill-button {
+  background: var(--pink);
+  color: white;
+  box-shadow: 0 5px 18px rgba(223, 92, 145, 0.22);
+}
+
+.pill-button:hover {
+  background: transparent;
+  transform: translateY(-2px);
+}
+
+/* Optional outline button */
+
+.outline-button {
+  padding: 12px 18px;
+  border-radius: 30px;
+  color: var(--pink);
+}
+
+.outline-button:hover {
+  background: var(--pink);
+  color: white;
+}
+
+/* Scroll indicator */
+
+.scroll-cue {
+  position: absolute;
+  right: 4.5%;
+  bottom: 22px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  color: #f0eee5;
+  font-size: 10px;
+}
+
+.scroll-cue span {
+  width: 15px;
+  height: 15px;
+
+  border-right: 1.5px solid white;
+  border-bottom: 1.5px solid white;
+
+  transform: rotate(45deg);
+}
+
+
+/* =========================================================
+   5. INTRO — WARM IVORY
+   HTML class: .tst-intro
+   ========================================================= */
+
+.tst-intro {
+  padding: 100px 7%;
+
+  background: var(--ivory);
+  color: var(--text-dark);
+
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.tst-intro-main {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  align-items: center;
+  gap: 65px;
+
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+/* Intro label */
+
+.tst-eyebrow {
+  display: block;
+
+  color: var(--pink);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Intro headline */
+
+.tst-intro-copy h2 {
+  margin: 18px 0 24px;
+
+  font-family: var(--font-display);
+  font-size: clamp(42px, 5vw, 64px);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+.tst-intro-copy h2 em {
+  color: var(--pink-dark);
+  font-style: italic;
+}
+
+/* Intro paragraph */
+
+.tst-intro-copy p {
+  max-width: 470px;
+  margin: 0;
+
+  color: #455449;
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+/* Date and venue cards */
+
+.tst-intro-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.tst-info-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 100px;
+  padding: 22px;
+
+  border: 1px solid rgba(20, 41, 29, 0.22);
+}
+
+.tst-info-card h3 {
+  margin: 0;
+
+  color: var(--green);
+  font-family: var(--font-display);
+  font-size: clamp(19px, 2vw, 25px);
+  font-weight: 600;
+}
+
+.tst-info-card span {
+  color: #647267;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   6. CONFERENCE THEME — SOFT SAGE
+   HTML class: .tst-theme
+   ========================================================= */
+
+.tst-theme {
+  padding: 95px 6%;
+
+  background: var(--sage);
+  color: var(--green);
+  text-align: center;
+
+  border-bottom: 1px solid rgba(21, 59, 38, 0.15);
+}
+
+/* Theme headline */
+
+.tst-theme h2 {
+  margin: 22px auto;
+
+  color: var(--green);
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 61px);
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+}
+
+.tst-theme h2 em {
+  color: var(--pink-dark);
+  font-style: italic;
+}
+
+/* Small conference identifier */
+
+.tst-theme p {
+  margin: 22px 0 0;
+
+  color: var(--text-muted-dark);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+
+/* =========================================================
+   7. UPDATES — DEEP FOREST
+   HTML class: .tst-updates
+   ========================================================= */
+
+.tst-updates {
+  padding: 75px 7%;
+
+  background: var(--forest-section);
+  color: var(--text-light);
+}
+
+/* Updates heading and introduction */
+
+.tst-updates-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+
+  max-width: var(--content-width);
+  margin: 0 auto 35px;
+}
+
+.tst-updates-header h2 {
+  margin: 12px 0 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 46px);
+  font-weight: 600;
+}
+
+.tst-updates-header > p {
+  max-width: 340px;
+  margin: 0;
+
+  color: var(--text-muted-light);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Three update columns */
+
+.tst-updates-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  max-width: var(--content-width);
+  margin: 0 auto;
+
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.tst-update-item {
+  display: flex;
+  gap: 20px;
+
+  padding: 30px 24px;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.tst-update-item:first-child {
+  padding-left: 0;
+}
+
+.tst-update-item:last-child {
+  border-right: 0;
+}
+
+/* Update number and status */
+
+.tst-update-number {
+  color: var(--pink);
+  font-family: var(--font-display);
+  font-size: 28px;
+}
+
+.tst-update-label {
+  color: var(--pink);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+/* Update title and description */
+
+.tst-update-item h3 {
+  margin: 10px 0;
+
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.tst-update-item p {
+  margin: 0;
+
+  color: var(--text-muted-light);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   8. FOOTER
+   ========================================================= */
+
+.site-footer {
+  padding: 24px var(--page-gutter) 18px;
+
+  background: var(--forest-deep);
+  color: #e8e8df;
+}
+
+/* Footer top row */
+
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.footer-logos {
+  gap: 16px;
+}
+
+.footer-logos .logo-faculty {
+  width: 135px;
+  height: 48px;
+}
+
+.footer-logos .logo-chula {
+  width: 100px;
+  height: 44px;
+}
+
+.footer-logos .logo-gsos {
+  width: 125px;
+  height: 44px;
+}
+
+.footer-logos .logo-divider {
+  height: 35px;
+}
+
+/* Social media links */
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  font-family: var(--font-body);
+  font-size: 12px;
+}
+
+.social-links span {
+  margin-right: 6px;
+}
+
+.social-links a {
+  display: grid;
+  place-items: center;
+
+  width: 25px;
+  height: 25px;
+
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+
+  font-size: 12px;
+  transition: var(--transition);
+}
+
+.social-links a:hover {
+  background: var(--pink);
+  border-color: var(--pink);
+}
+
+/* Copyright and image credit */
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding-top: 14px;
+
+  color: #aebbb0;
+  font-family: var(--font-body);
+  font-size: 10px;
+}
+
+.image-credit {
+  max-width: 420px;
+  text-align: right;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   9. TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  .site-header {
+    padding: 18px 4%;
+  }
+
+  .brand-row {
+    gap: 12px;
+  }
+
+  .logo-faculty {
+    width: 125px;
+  }
+
+  .logo-chula {
+    width: 100px;
+  }
+
+  .logo-gsos {
+    width: 130px;
+  }
+
+  .nav {
+    gap: 18px;
+  }
+
+  .hero-content {
+    width: 55vw;
+  }
+}
+
+
+/* =========================================================
+   10. MOBILE — TABLET AND PHONES
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+  /* Header */
+
+  .site-header {
+    padding: 12px 5%;
+    background: rgba(3, 20, 12, 0.9);
+  }
+
+  .brand-row {
+    gap: 9px;
+  }
+
+  .logo-faculty {
+    width: 92px;
+    height: 42px;
+  }
+
+  .logo-chula {
+    width: 76px;
+    height: 40px;
+  }
+
+  .logo-gsos {
+    width: 95px;
+    height: 40px;
+  }
+
+  .logo-divider {
+    height: 30px;
+  }
+
+  /* Collapsible navigation */
+
+  .nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    left: 0;
+
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+
+    padding: 22px 5%;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    background: #071e13;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+  }
+
+  .menu-toggle span {
+    width: 22px;
+    height: 1px;
+    background: #fff;
+  }
+
+  /* Hero */
+
+  .hero {
+    height: auto;
+    min-height: 720px;
+    padding: 115px 0 70px;
+  }
+
+  .hero-photo {
+    background-position: 58% center;
+  }
+
+  .hero-shade {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(3, 25, 13, 0.97),
+        rgba(4, 30, 16, 0.83) 45%,
+        rgba(4, 25, 14, 0.25)
+      ),
+      linear-gradient(
+        0deg,
+        rgba(3, 18, 11, 0.5),
+        transparent 35%
+      );
+  }
+
+  .hero-content {
+    width: 88%;
+    margin-left: 5%;
+    padding-top: 10px;
+  }
+
+  .tst-wordmark {
+    font-size: 82px;
+  }
+
+  .event-label {
+    font-size: 15px;
+    letter-spacing: 0.08em;
+  }
+
+  .hero h1 {
+    font-size: 58px;
+  }
+
+  .hero-subtitle {
+    font-size: 20px;
+  }
+
+  .event-meta {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .meta-item {
+    font-size: 11px;
+  }
+
+  .location {
+    padding-left: 15px;
+  }
+
+  .scroll-cue {
+    right: 5%;
+    bottom: 18px;
+  }
+
+  /* Intro */
+
+  .tst-intro {
+    padding: 65px 6%;
+  }
+
+  .tst-intro-main {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .tst-intro-copy h2 {
+    font-size: 43px;
+  }
+
+  .tst-intro-copy p {
+    font-size: 15px;
+  }
+
+  .tst-intro-info {
+    grid-template-columns: 1fr;
+    max-width: 650px;
+  }
+
+  .tst-info-card {
+    min-height: 85px;
+  }
+
+  /* Conference theme */
+
+  .tst-theme {
+    padding: 70px 6%;
+  }
+
+  .tst-theme h2 {
+    font-size: 34px;
+  }
+
+  .tst-theme p {
+    font-size: 10px;
+    line-height: 1.7;
+  }
+
+  /* Updates */
+
+  .tst-updates {
+    padding: 60px 6%;
+  }
+
+  .tst-updates-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .tst-updates-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tst-update-item {
+    gap: 15px;
+    padding: 24px 0;
+
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .tst-update-item:last-child {
+    border-bottom: 0;
+  }
+
+  /* Footer */
+
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-logos {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .footer-logos .logo-faculty {
+    width: 115px;
+  }
+
+  .footer-logos .logo-chula {
+    width: 90px;
+  }
+
+  .footer-logos .logo-gsos {
+    width: 115px;
+  }
+
+  .social-links {
+    margin-top: 8px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .image-credit {
+    text-align: left;
+  }
+}
+
+
+/* =========================================================
+   11. SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 400px) {
+  .brand-row {
+    gap: 7px;
+  }
+
+  .logo-faculty {
+    width: 75px;
+  }
+
+  .logo-chula {
+    width: 68px;
+  }
+
+  .logo-gsos {
+    width: 78px;
+  }
+
+  .hero h1 {
+    font-size: 49px;
+  }
+
+  .event-meta {
+    display: block;
+  }
+
+  .location {
+    margin-top: 15px;
+  }
+
+  .tst-intro-info {
+    grid-template-columns: 1fr;
+  }
+
+  .tst-theme h2 {
+    font-size: 30px;
+  }
+}
+/* Event metadata icons */
+
+.event-meta .meta-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+
+  color: var(--pink);
+  stroke-width: 1.7;
+}
