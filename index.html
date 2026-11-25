@@ -20,7 +20,7 @@
   <meta name="twitter:description" content="From Morphology to Molecules and Museomics.">
   <meta name="twitter:image" content="https://tst15-cu.com/assets/og-image.jpg">
 
-  <title>TST15 — The Future of Taxonomy</title>
+  <title>TST15 — Chulalongkorn University</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,19 +64,19 @@
 
       <a href="#contact" data-en="Contact" data-th="ติดต่อ">Contact</a>
 
-      <!-- LANGUAGE SWITCHER -->
-      <div class="language-switcher" aria-label="Select language">
-        <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
-        <span class="lang-divider">|</span>
-        <button type="button" class="lang-btn" data-lang="th" aria-pressed="false">TH</button>
-      </div>
-
+  
     </nav>
   </header>
 
 
   <main>
-
+    <div class="floating-language" aria-label="Select language">
+    <button type="button" class="lang-btn active"
+          data-lang="en" aria-pressed="true">EN</button>
+        <span>|</span>
+  <button type="button" class="lang-btn"
+          data-lang="th" aria-pressed="false">TH</button>
+</div>
     <!-- HERO SECTION -->
     <section class="hero" id="home">
 
@@ -94,7 +94,7 @@
           <p class="eyebrow event-label">
             <span data-en="The 15" data-th="งานประชุมวิชาการอนุกรมวิธานและซิสเทมาติคส์ในประเทศไทย ครั้งที่ 15">The 15</span><sup>th</sup>
             <span data-en="Conference on Taxonomy and Systematics in Thailand"
-                  data-th="งานประชุมวิชาการอนุกรมวิธานและซิสเทมาติคส์ในประเทศไทย">Conference on Taxonomy and Systematics in Thailand</span>
+                  data-th="">Conference on Taxonomy and Systematics in Thailand</span>
           </p>
 
         </div>
@@ -403,7 +403,7 @@
   <script>
     document.addEventListener("DOMContentLoaded", function () {
 
-      const languageButtons = document.querySelectorAll(".lang-btn");
+      const languageButtons = document.querySelectorAll(".floating-language .lang-btn");
 
       const translatableElements = document.querySelectorAll(
         "[data-en][data-th]"

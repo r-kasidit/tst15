@@ -1225,3 +1225,48 @@ a {
     justify-content: center;
   }
 }
+
+/* Floating language switcher */
+
+.floating-language {
+  position: fixed;
+  top: 24px;
+  right: 28px;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 7px 13px;
+  border-radius: 30px;
+
+  background: rgba(243, 240, 229, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow: 0 3px 15px rgba(0,0,0,0.12);
+}
+
+.floating-language .lang-btn {
+  color: #092116;
+  opacity: 0.55;
+}
+
+.floating-language .lang-btn.active {
+  color: #DF5C91;
+  opacity: 1;
+}
+
+.floating-language > span {
+  color: #999;
+  font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  .floating-language {
+    top: 17px;
+    right: 16px;
+    padding: 6px 11px;
+  }
+}
